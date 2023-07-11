@@ -1,27 +1,37 @@
-/* eslint-env node */
-
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
   extends: [
-    'eslint:recommended',
+    'standard',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:react/recommended',
     'plugin:react-hooks/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: true,
-    tsconfigRootDir: __dirname,
+    sourceType: 'module'
   },
-  plugins: ['react-refresh'],
+  settings: {
+    react: { version: 'detect' }
+  },
+  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'comma-dangle': ['warn', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'ignore',
+    }],
+    'space-before-function-paren': ['warn', { anonymous: 'never', named: 'never', asyncArrow: 'always' }],
+    'object-shorthand': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-  },
+    '@typescript-eslint/no-explicit-any': 'off',
+    'react/no-children-prop': 'off',
+  }
 }

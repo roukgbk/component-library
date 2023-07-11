@@ -1,17 +1,12 @@
-import { useState } from 'react'
+import React from "react";
+import Button, { ButtonType, ButtonSize } from "./components/Button/button.tsx";
 
-function App() {
-  const [count] = useState(0)
-
+const App: React.FC = () => {
   return (
     <>
-      <h1>hello word</h1>
-      <h2>hello word</h2>
-      <h3>hello word</h3>
-      <hr/>
-      <code>
-        const a = {count}
-      </code>
+      <Button disabled> Hello </Button>
+      <Button btnType={ButtonType.Danger} size={ButtonSize.Large}> Hello </Button>
+      <Button disabled btnType={ButtonType.Link} href='www.baidu.com'> BaiDu Link </Button>
     </>
   )
 }
