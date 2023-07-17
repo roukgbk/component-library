@@ -14,7 +14,7 @@ const MenuItem: React.FC<MenuItemProps> = props => {
   const { className, disabled, index, style, children } = props
   const context = useContext(MenuContext)
   const classes = classNames('menu-item', className, {
-    'id-disabled': disabled,
+    'is-disabled': disabled,
     'is-active': context.index === index,
   })
 

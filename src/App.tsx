@@ -6,12 +6,12 @@ import MenuItem from "./components/Menu/menuItem.tsx";
 const App: React.FC = () => {
   return (
     <>
-      <Menu defaultIndex={0} onSelect={(index) => {
+      <Menu defaultIndex={0} mode={'vertical'} onSelect={(index) => {
         console.log(index)
       }}>
-        <MenuItem index={0}>1</MenuItem>
-        <MenuItem index={1} disabled>2</MenuItem>
-        <MenuItem index={2}>3</MenuItem>
+        <MenuItem index={0}>menuItem1</MenuItem>
+        <MenuItem index={1} disabled>menuItem2</MenuItem>
+        <MenuItem index={2}>menuItem3</MenuItem>
       </Menu>
       <div style={{ display: "flex", marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
         <Button> Hello </Button>
