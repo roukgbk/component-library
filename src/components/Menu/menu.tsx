@@ -15,7 +15,7 @@ export interface MenuProps {
 
 interface IMenuContext {
   index: number;
-  onSelect?: SelectCallback;
+  onSelect?: (index: number) => void;
 }
 
 export const MenuContext = createContext<IMenuContext>({ index: 0 })
@@ -43,11 +43,11 @@ const Menu: React.FC<MenuProps> = props => {
     onSelect: handleClick,
   }
   return (
-    <ul className={classes} style={style}>
-      <MenuContext.Provider value={passedContext}>
-        {children}
-      </MenuContext.Provider>
-    </ul>
+      <ul className={classes} style={style} data-testid='test-menu'>
+        <MenuContext.Provider value={passedContext}>
+          {children}
+        </MenuContext.Provider>
+      </ul>
   )
 }
 

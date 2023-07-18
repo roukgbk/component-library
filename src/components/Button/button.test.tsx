@@ -26,7 +26,7 @@ describe('test button component', () => {
     expect(element).toBeInTheDocument()
     expect(element.tagName).toEqual('BUTTON')
     expect(element).toHaveClass('btn btn-default')
-    expect(element).toBeFalsy()
+    expect(element).toBeTruthy()
     fireEvent.click(element)
     expect(defaultProps.onClick).toHaveBeenCalled()
   })
